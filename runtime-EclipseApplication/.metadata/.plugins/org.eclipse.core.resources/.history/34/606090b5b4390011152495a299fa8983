@@ -1,0 +1,31 @@
+package packageB;
+
+@XmlType(name = "ClassB", propOrder = { "authzService",
+		"assertionIDRequestService", "nameIDFormat" })
+public class ClassB {
+	protected String authzService_;
+	protected String assertionIDRequestService;
+	protected String nameIDFormat;
+
+	public String getAuthzService() {
+		if (authzService_ == null) {
+			authzService_ = new String();
+		}
+		return this.authzService_;
+	}
+
+	public String getAssertionIDRequestService() {
+		if (assertionIDRequestService == null) {
+			assertionIDRequestService = new String();
+		}
+		return this.assertionIDRequestService;
+	}
+
+	public String getNameIDFormat() {
+		if (nameIDFormat == null) {
+			nameIDFormat = new String();
+		}
+		return this.nameIDFormat;
+	}
+
+}

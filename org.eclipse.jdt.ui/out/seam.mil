@@ -1,0 +1,4 @@
+Class c in p
+Where(@XmlType* public class *)
+   Field f in c
+      AssertExists(@XmlType.propOrder has f.name):Msg("%s missing %s",@XmlType.propOrder, f.name) 

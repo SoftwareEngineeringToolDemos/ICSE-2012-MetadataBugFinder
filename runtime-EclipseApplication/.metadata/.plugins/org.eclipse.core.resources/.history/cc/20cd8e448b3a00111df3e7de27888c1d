@@ -1,0 +1,24 @@
+package packageA;
+
+public class LibraryPackagingElement {
+	@Attribute(name = "type")
+	public String type__;
+	@Attribute(name = "url")
+	public String url;
+
+	public String getType() {
+		return type__;
+	}
+
+	public void setType(String type) {
+		this.type__ = type;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+}

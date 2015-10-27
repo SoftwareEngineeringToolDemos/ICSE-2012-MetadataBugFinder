@@ -1,0 +1,3 @@
+Method m in c
+Where(m == c.SuperClass.method)
+   m += @Override

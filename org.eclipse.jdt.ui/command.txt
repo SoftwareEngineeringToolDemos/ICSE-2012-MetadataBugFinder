@@ -1,0 +1,107 @@
+// ***********************************************************
+// * @author Myoungkyu Song
+// * @date Aug 4, 2011
+// *
+// * Change the value of 'run' property to run the different.
+// ***********************************************************
+
+//[[Common parameters ]]
+@begin
+run:seam
+// intellij1 seam wfe adito hibernate spring jedit
+inference:true
+target:/home/mksong/runtime-EclipseApplication
+eclipse-violation-check:true
+violation-check:false
+@end
+
+//[[ intellij (Annotation Metadata Invariant) ]]
+target:intellij1
+path:/home/mksong/workspace/metadataInvariant/test5/intellij/idea/
+//path:./test5/intellij/idea-temp/
+//path:./test5/intellij/idea/java/compiler/impl/src/com/intellij/packaging/impl
+relation:FIELD_NAME, ANNOTATION_ATTRIBUTE, NAME-OR-EMPTY, @Attribute
+//inspection-target:/home/mksong/workspace/metadataInvariant/test5/intellij/idea/
+//inspection-target:/home/mksong/workspace/metadataInvariant/test5/intellij/idea/
+target:/home/mksong/runtime-EclipseApplication
+metadata:annotation
+//for unittesting
+pattern:MATCH($ANNOTATION_ATTRIBUTE.NAME-OR-EMPTY, $FIELD_NAME)
+
+//[[ seam (@XMLType XML Binding) ]]
+target:seam
+path:/home/mksong/workspace1/casestudies/casestudies4/seam-3.0.0.Final/
+relation:FIELD, ANNOTATION_ATTRIBUTE, propOrder, @XmlType
+//inspection-target:/home/mksong/workspace/casestudies/casestudies4/seam-3.0.0.Final
+//Result -> CONTAIN($METADATA.ATTR, $FIELD)
+metadata:annotation
+//for unit testing
+pattern:CONTAINS($METADATA.ATTRVAL, $FIELD)
+
+//[[ wfe (XML Metadata Invariant) ]]
+target:wfe
+//path:./test4/src
+path:/home/mksong/workspace1/metadataInvariant/test4/src
+xml-suffix:.hbm.xml
+relation:class, name, table
+relation-var:classname, tablename
+//relation-save:./test4/out/relationClassTable.txt
+relation-save:/home/mksong/workspace1/metadataInvariant/test4/out/relationClassTable.txt
+//inspection-target:./test4/src
+inspection-target:/home/mksong/workspace1/metadataInvariant/test4/src
+metadata:xml
+// for unit-testing
+pattern:PREFIX(JBPM_) + UPPERCASE($CLASSNAME)
+
+//[[ adito (XML Metadata Invariant) ]]
+//[[ Struts form beans and form-bean mappings 
+//[[ Link: http://publib.boulder.ibm.com/infocenter/wsadhelp/v5r1m2/index.jsp?topic=%2Fcom.ibm.etools.struts.doc%2Ftopics%2Fcstrdoc002.html
+target:adito
+//path:./test4/adito-0.9.1
+path:/home/mksong/workspace1/metadataInvariant/test4/adito-0.9.1
+xml-suffix:.xml
+relation:form-bean, name, type
+relation-var:form-name, classname
+//relation-save:./test4/out/relationNameType.txt
+relation-save:/home/mksong/workspace1/metadataInvariant/test4/out/relationNameType.txt
+//inspection-target:./test4/adito-0.9.1
+inspection-target:/home/mksong/workspace1/metadataInvariant/test4/adito-0.9.1
+metadata:xml
+main-extractor:true
+// for unit-testing
+pattern:LOWFIRSTCHAR($CLASSNAME)
+
+//[[ Hibernate (Annotation Metadata Invariant) ]]
+target:hibernate
+path:/home/mksong/workspace1/casestudies/casestudies1/hibernate-release-4.0.0.Beta4/project/hibernate-core/src/
+relation:METHOD, ANNOTATION, @Test
+metadata:annotation
+//for unittesting
+pattern:MATCH($METHOD.MODIFIER, PUBLIC)
+
+//[[ jEdit (Annotation Metadata Invariant: @Override Ommission Check) ]]
+target:jedit
+path:/home/mksong/workspace/metadataInvariant/test5/jedit/jEdit/
+relation:METHOD, ANNOTATION, @Override
+inspection-target:/home/mksong/workspace/metadataInvariant/test5/jedit/jEdit/org/gjt/sp/jedit
+//inspection-target:test5/jedit/jEdit
+//inspection-target:test5/jedit/jEdit/org/gjt/sp/jedit/textarea/debug
+enable-logfile:false
+check-type:ommission
+metadata:annotation
+// for unit testing
+pattern:CONTAINS($METHOD, $SUPERCLASS)
+
+//[[ spring (Annotation Metadata Invariant) ]]
+target:spring
+//path:/home/mksong/workspace1/metadataInvariant/test5/temp-spring-bug
+//path:/home/mksong/workspace1/metadataInvariant/test5/temp-spring-bug
+path:/home/mksong/workspace1/metadataInvariant/test5/spring-framework-3.1.0.M2/src
+//path:/home/mksong/workspace1/metadataInvariant/test5/temp-spring-bug/
+//path:/home/mksong/workspace1/metadataInvariant/test5/temp-spring/
+relation:className, annotationName, @Configuration
+//inspection-target:./test5/temp-spring-bug/
+inspection-target:/home/mksong/workspace1/metadataInvariant/test5/temp-spring-bug
+metadata:annotation
+//for unittesting
+pattern:ENDSWITH($CLASSNAME, $ANNOTATIONNAME)

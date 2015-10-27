@@ -1,0 +1,10 @@
+package packageB;
+
+@XmlType(name = "ClassB", propOrder = { 
+	    "name", "price", "value"
+	})
+public class ClassB {
+	protected String name;
+	protected String price;
+	protected String value;
+}

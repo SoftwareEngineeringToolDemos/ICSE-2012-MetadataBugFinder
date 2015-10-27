@@ -1,0 +1,4 @@
+Class c in p
+Where(public class *)
+   c += @table
+   @table.name = (^/JBPM_/$)(s/[a-z]/[A-Z]/)(c.name) 

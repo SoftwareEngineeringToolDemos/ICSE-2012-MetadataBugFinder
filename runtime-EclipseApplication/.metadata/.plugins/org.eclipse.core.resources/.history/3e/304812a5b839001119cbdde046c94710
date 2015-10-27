@@ -1,0 +1,9 @@
+package packageA;
+
+public class ClassA {
+	@Attribute(name = "type")
+	public String type;
+	@Attribute(name = "url")
+	public String url;
+
+}

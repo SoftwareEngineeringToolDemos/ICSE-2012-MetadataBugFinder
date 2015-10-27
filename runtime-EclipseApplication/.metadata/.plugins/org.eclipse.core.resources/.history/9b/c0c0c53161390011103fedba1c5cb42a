@@ -1,0 +1,13 @@
+package packageA;
+
+public class ClassA {
+	String addr;
+	
+	public void foo(String param) {
+		this.addr = param;
+	}
+	
+	public String bar() {
+		return this.addr;
+	}
+}

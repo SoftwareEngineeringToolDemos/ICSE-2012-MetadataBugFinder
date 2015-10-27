@@ -1,0 +1,4 @@
+Field f in c
+Where(private * *)
+   f += @XmlType
+   @XmlType.propOrder -> f.name 

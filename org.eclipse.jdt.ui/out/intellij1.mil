@@ -1,0 +1,3 @@
+Field f in c
+Where(@Attribute f)
+   Assert(@Attribute.name eq f.name | @Attribute.name eq *f.name | @Attribute.name eq *Lc(f.name)):Msg("%s missing %s",f.name, @Attribute) 

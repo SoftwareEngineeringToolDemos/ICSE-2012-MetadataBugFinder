@@ -1,0 +1,8 @@
+package packageC;
+
+public class ClassC {
+	@Configuration
+	class ConfigWithExplicitName {
+
+	}
+}

@@ -1,0 +1,14 @@
+package packageA;
+
+public class Class_A {
+	@Attribute(name="address")
+	String addressA;
+	
+	public void foo(String param) {
+		this.addressA = param;
+	}
+	
+	public String bar() {
+		return this.addressA;
+	}
+}

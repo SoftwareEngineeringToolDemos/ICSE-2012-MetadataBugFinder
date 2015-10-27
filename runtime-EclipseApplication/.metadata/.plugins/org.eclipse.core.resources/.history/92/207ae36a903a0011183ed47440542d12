@@ -1,0 +1,43 @@
+package packageD;
+
+import java.io.Serializable;
+
+public class ModuleInstance implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	Long id = null;
+	protected Long processInstance = null;
+	int version = 0;
+
+	public ModuleInstance(Long id, Long processInstance, int version) {
+		this.id = id;
+		this.processInstance = processInstance;
+		this.version = version;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Long getProcessInstance() {
+		return processInstance;
+	}
+
+	public void setProcessInstance(Long processInstance) {
+		this.processInstance = processInstance;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
+}

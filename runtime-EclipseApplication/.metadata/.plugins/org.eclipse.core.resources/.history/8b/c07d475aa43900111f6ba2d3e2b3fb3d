@@ -1,0 +1,10 @@
+package packageB;
+
+@XmlType(name = "ClassB", propOrder = { 
+	    "authzService", "assertionIDRequestService", "nameIDFormat"
+	})
+public class ClassB {
+	protected String authzService;
+	protected String assertionIDRequestService;
+	protected String nameIDFormat;
+}

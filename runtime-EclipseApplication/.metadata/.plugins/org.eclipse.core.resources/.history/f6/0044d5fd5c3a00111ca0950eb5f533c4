@@ -1,0 +1,7 @@
+package packageG;
+
+public class SuperClass {
+	void methodA() {
+
+	}
+}

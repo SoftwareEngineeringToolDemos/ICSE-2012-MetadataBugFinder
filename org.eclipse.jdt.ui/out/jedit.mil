@@ -1,0 +1,4 @@
+Class c in p
+Method m in c
+Where(@Override m)
+   Assert(c.super has m):Msg("%s missing %s",c.super, m.name) 

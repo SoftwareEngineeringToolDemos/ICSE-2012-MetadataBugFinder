@@ -1,0 +1,215 @@
+package packageE;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
+
+/**
+ * Form for providing the attributes to be edited and validated.
+ */
+public class WebForwardForm_ {
+	public static final String ATTR_NO_AUTHENTICATION = "none";
+	public static final String ATTR_FORM_BASED_AUTHENTICATION = "form";
+	public static final String ATTR_HTTP_BASED_AUTHENTICATION = "http";
+	private String selectedTab = "details";
+	private int type;
+	private String destinationURL;
+	private String category;
+	private boolean autoStart;
+
+	// Replacement proxy attributes
+	private String encoding;
+
+	private String authenticationType;
+
+	// Authenticating web forward
+	private String authenticationUsername;
+	private String authenticationPassword;
+	private String preferredAuthenticationScheme;
+
+	// Form based authentication
+	private String formType;
+	private String formParameters;
+
+	// reverse proxy attribute
+	private String paths;
+	private boolean activeDNS;
+	private String hostHeader;
+	private Map customHeaders;
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.adito.tabs.TabModel#getSelectedTab()
+	 */
+	public String getSelectedTab() {
+		return selectedTab;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.adito.tabs.TabModel#setSelectedTab(java.lang.String)
+	 */
+	public void setSelectedTab(String selectedTab) {
+		this.selectedTab = selectedTab;
+	}
+
+	/**
+	 * @return The Web Forward Category.
+	 */
+	public String getCategory() {
+		return category;
+	}
+
+	/**
+	 * @param category
+	 *            The Web Forward Category.
+	 */
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public boolean isAutoStart() {
+		return autoStart;
+	}
+
+	public void setAutoStart(boolean autoStart) {
+		this.autoStart = autoStart;
+	}
+
+	/**
+	 * @return The destination URL.
+	 */
+	public String getDestinationURL() {
+		return destinationURL;
+	}
+
+	/**
+	 * @param destinationURL
+	 *            The destination URL.
+	 */
+	public void setDestinationURL(String destinationURL) {
+		this.destinationURL = destinationURL;
+	}
+
+	/**
+	 * @return The type of web forward.
+	 */
+	public int getType() {
+		return type;
+	}
+
+	/**
+	 * @param type
+	 *            The type of web forward.
+	 */
+	public void setType(int type) {
+		this.type = type;
+	}
+
+	public boolean isActiveDNS() {
+		return activeDNS;
+	}
+
+	public void setActiveDNS(boolean activeDNS) {
+		this.activeDNS = activeDNS;
+	}
+
+	public void setAuthenticationType(String authenticationType) {
+		this.authenticationType = authenticationType;
+	}
+
+	public String getAuthenticationPassword() {
+		return authenticationPassword;
+	}
+
+	public void setAuthenticationPassword(String authenticationPassword) {
+		this.authenticationPassword = authenticationPassword;
+	}
+
+	public String getAuthenticationUsername() {
+		return authenticationUsername;
+	}
+
+	public void setAuthenticationUsername(String authenticationUsername) {
+		this.authenticationUsername = authenticationUsername;
+	}
+
+	public Map getCustomHeaders() {
+		return customHeaders;
+	}
+
+	public void setCustomHeaders(Map customHeaders) {
+		this.customHeaders = customHeaders;
+	}
+
+	public String getEncoding() {
+		return encoding;
+	}
+
+	public void setEncoding(String encoding) {
+		this.encoding = encoding;
+	}
+
+	public String getPaths() {
+		return paths;
+	}
+
+	public void setPaths(String paths) {
+		this.paths = paths;
+	}
+
+	public String getPreferredAuthenticationScheme() {
+		return preferredAuthenticationScheme;
+	}
+
+	public void setPreferredAuthenticationScheme(
+			String preferredAuthenticationScheme) {
+		this.preferredAuthenticationScheme = preferredAuthenticationScheme;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.adito.tabs.TabModel#getTabTitle(int)
+	 */
+	public String getTabTitle(int i) {
+		return null;
+	}
+
+	public String getHostHeader() {
+		return hostHeader;
+	}
+
+	public void setHostHeader(String hostHeader) {
+		this.hostHeader = hostHeader;
+	}
+
+	public String getFormType() {
+		return formType;
+	}
+
+	public void setFormType(String formType) {
+		this.formType = formType;
+	}
+
+	public String getFormParameters() {
+		return formParameters;
+	}
+
+	public void setFormParameters(String formParameters) {
+		this.formParameters = formParameters;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see com.adito.tabs.TabModel#getTabBundle(int)
+	 */
+	public String getTabBundle(int idx) {
+		return null;
+	}
+}
